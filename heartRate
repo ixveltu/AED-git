@@ -1,0 +1,20 @@
+def heartRate(fc: int):
+    """
+    Recebe  valores que indicam a fc do usuario 
+    e indica o tipo de treino do mesmo
+    """
+    if 80>=fc and fc>=50:
+        print("Treino aerobico")
+    elif 100>=fc:
+        print("Treino cardio vascular")
+    elif 120>=fc:
+        print("Treino aerobico ideal")
+    elif 140>=fc:
+        print("Treino anaerobico")
+        return(heartRate)
+    else:
+        return(" ")
+
+fc=int(input("Indique a frequencia cardiaca durante o treino: "))
+heartRate(fc)
+print("\b")

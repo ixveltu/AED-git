@@ -1,0 +1,14 @@
+def somatorio(limiteInferior, limiteSuperior):
+    """
+    Recebe um conjunto de numeros pedido e faz a soma de todos no intervalo
+    incluindo ambos limites
+    """
+    somatorio=0
+    for i in range(limiteInferior, limiteSuperior + 1):
+        somatorio+=i
+    print(somatorio, end=" ")
+
+limiteInferior=int(input("indique o limite inferior que prentede: "))
+limiteSuperior=int(input("Indique o limite superior que pretende: "))
+somatorio(limiteInferior, limiteSuperior)
+print("\b")
