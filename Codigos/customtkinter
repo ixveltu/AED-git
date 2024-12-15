@@ -1,0 +1,43 @@
+import customtkinter
+import CTkMessagebox
+from PIL import ImageTk #importa imagens da PIL
+
+# Importa a biblioteca customtkinter, uma extensão de tkinter que permite criar interfaces modernas
+app = customtkinter.CTk()  # Cria a janela principal da aplicação utilizando a classe CTk
+app.title("Gestão de Presenças")  # Define o título que será exibido na barra superior da janela
+
+# Definição das dimensões da janela
+appwidth = 1000  # Largura da janela em pixels
+appheight = 500  # Altura da janela em pixels
+
+# Obtém a largura e a altura total da tela do usuário
+screenWidth = app.winfo_screenwidth()  # Largura total da tela do usuário
+screenHeight = app.winfo_screenheight()  # Altura total da tela do usuário
+
+# Calcula a posição x e y para centralizar a janela na tela
+x = (screenWidth / 2) - (appwidth / 2)  # Calcula a posição horizontal (centro da tela)
+y = (screenHeight / 2) - (appheight / 2)  # Calcula a posição vertical (centro da tela)
+
+# Define a geometria
+app.geometry(f"{appwidth}x{appheight}+{int(x)}+{int(y)}")  # Define o tamanho e posicionamento da janela no centro da tela
+
+# Impede que o usuário redimensione a janela
+app.resizable(False, False)  # Desativa a capacidade de redimensionar a janela (horizontal e vertical)
+
+# Cria uma variavel para imagens 
+imgGerir = ImageTk.PhotoImage(file="Ficha10/pasta/images/" + "icoOp1.png")
+
+
+# Cria variavel para butoes 
+buttonGerir = customtkinter.CTkButton(app, text="Gerir Presenças",text_color="white",fg_color="blue", width=230, height=120, image=imgConsultar, command="gerirPresenças", font=("Helvitica",14 ))
+buttonGerir.place(x=20, y=30) # Define o lugar onde o butao fica
+
+# Funçao para salvar notas 
+def saveNotes():
+    ficheiro=open(caminho + "ficheiro", "w") # Abre ficheiro em modo w que apaga e guarda (definir o caminho desejado)
+
+    ficheiro.write(notas.get("0.0", "end-1c")) # Pega no texto escrito na textbox "notas"
+    
+    ficheiro.close() # Fecha o ficheiro 
+    
+    print("Ficheiro salvo") # Printa caso a funçao funciona
