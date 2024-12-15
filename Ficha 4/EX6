@@ -1,0 +1,12 @@
+def searchNumbers(numeros):
+    try:
+        posNumero=listaNumerica.index(numeros)
+    except ValueError:
+        print("O número que procura não se encontra na lista")
+    else:
+        print("O número que pesquisa encontra-se na posiçao {:n}" .format(posNumero))
+
+listaNumerica=[1,2,3,4,5,6,7,8,9,10]
+pesquisa=int(input("Numero que deseja pesquisar: "))
+searchNumbers(pesquisa)
+
